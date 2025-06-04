@@ -1,16 +1,25 @@
 :root {
-  --base-light: #00ffff;
-  --base-dark: #00008b;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --primary-color: #4A90E2; /* NoteEase Primary */
+  --secondary-color: #FFFFFF; /* NoteEase Secondary */
+  --accent-color: #F5A623;   /* NoteEase Accent */
+  --base-dark: #333333; /* Dark text for light theme */
+  --text-color-light-theme: #333333; /* General text on light backgrounds */
+  --text-secondary-light-theme: #555555; /* Secondary text on light backgrounds */
+  --border-color-light-theme: #DDDDDD; /* Border color for light theme */
+
+  /* Retaining Kavia for Navbar, can be removed if Navbar is fully themed for NoteEase */
+  --kavia-orange: #E87A41;
+  --kavia-dark-bg: #1A1A1A; /* For elements that might remain dark, like Navbar */
+  --kavia-text-on-dark: #FFFFFF;
+  --kavia-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --kavia-border-on-dark: rgba(255, 255, 255, 0.1);
 }
 
 body {
   margin: 0;
   font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  background-color: var(--base-dark);
-  color: var(--text-color);
+  background-color: var(--secondary-color); /* Light theme background */
+  color: var(--text-color-light-theme);     /* Default text color for light theme */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,12 +31,13 @@ body {
 }
 
 .navbar {
-  background-color: var(--base-dark);
+  background-color: var(--kavia-dark-bg); /* Keeping navbar dark for contrast for now */
+  color: var(--kavia-text-on-dark);
   padding: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--kavia-border-on-dark);
   position: fixed;
   top: 0;
   width: 100%;
@@ -44,7 +54,7 @@ body {
 }
 
 .logo-symbol {
-  color: var(--base-light);
+  color: var(--primary-color); /* Using NoteEase primary for logo symbol */
 }
 
 .container {
