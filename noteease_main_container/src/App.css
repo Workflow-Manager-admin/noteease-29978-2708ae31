@@ -76,7 +76,7 @@ body {
 }
 
 .subtitle {
-  color: var(--base-light);
+  color: var(--primary-color); /* Using NoteEase primary */
   font-weight: 500;
   font-size: 1.1rem;
 }
@@ -86,19 +86,21 @@ body {
   font-weight: 600;
   line-height: 1.2;
   margin: 0;
+  color: var(--text-color-light-theme); /* Ensure title is visible on light theme */
 }
 
 .description {
   font-size: 1.1rem;
   line-height: 1.5;
-  color: var(--text-secondary);
+  color: var(--text-secondary-light-theme); /* Ensure description is visible */
   max-width: 600px;
   margin-bottom: 16px;
 }
 
+/* General button style for App.js, can be overridden by components */
 .btn {
-  background-color: var(--base-light);
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
@@ -109,10 +111,18 @@ body {
 }
 
 .btn:hover {
-  background-color: #7691ff;
+  background-color: #357ABD; /* Darker shade of primary */
 }
 
 .btn-large {
   padding: 12px 24px;
   font-size: 1.1rem;
+}
+
+/* Styles for the main content area to ensure it's below the fixed navbar */
+.main-content-area {
+  padding-top: 70px; /* Height of the navbar + some padding */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
